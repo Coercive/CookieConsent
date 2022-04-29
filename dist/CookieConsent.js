@@ -252,7 +252,7 @@
     /**
      * Defaults properties
      *
-     * @type {{overlay: string, name: string}}
+     * @type {{popup: string, body_popup: string, reload: boolean}}
      */
     CookieConsent.prototype.defaults = {
         popup: 'CookieConsentPopup',
