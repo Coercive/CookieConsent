@@ -106,7 +106,7 @@ You can copy and rewrite partialy the css file, or just declare some variables.
 $cookieconsent-color-btn-accept: 'red';
 
 // Color for switch checkbox (checked)
-$swicheckbox-color-checked: 'red';
+$switcheckbox-color-checked: 'red';
 
 // Font title
 %cookieconsent-font-title {

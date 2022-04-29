@@ -62,10 +62,10 @@
 	}
 
 	input:checked + .slider {
-		background-color: $swicheckbox-color-checked;
+		background-color: $switcheckbox-color-checked;
 		&:before {
 			@extend .icon-ok;
-			color: $swicheckbox-color-checked;
+			color: $switcheckbox-color-checked;
 			transform: translateX(26px);
 		}
 	}
