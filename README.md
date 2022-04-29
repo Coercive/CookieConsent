@@ -63,6 +63,12 @@ CookieConsent is a micropackage (css, js, php) to easily manage user consent at 
 }
 ```
 
+# JS requires
+The example JS file require some externals scripts :
+
+- JavaScript Cookie v2.2.1 https://github.com/js-cookie/js-cookie
+- jQuery v2.1.4 https://github.com/jquery/jquery
+
 # Start JS (basic example)
 ```js
 require('./plugin/CookieConsent');
