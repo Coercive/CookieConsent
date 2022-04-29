@@ -112,5 +112,34 @@ $cookieconsent-color-btn-accept: 'red';
 }
 ```
 
+Customize CSS for current language on main container.
+```css
+#CookieConsentPopup[data-lang="FR"] { /* do something */ }
+```
+
+Customize CSS for each popup. *(main, or configure)*.
+```css
+.card[data-service="cookies"] {}
+.card[data-service="cookies-configure"] {}
+```
+
+Add background layout when popup is opened.
+```scss
+body {
+    &.CookieConsentPopupOpened {
+        overflow: hidden;
+        &:before {
+            content: '';
+            position: fixed;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, .75);
+            z-index: 100;
+        }
+    }
+}
+```
+
 # Picture
 The given cookie image in /dist/img/cookie.png is free of use.
