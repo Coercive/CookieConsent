@@ -1,0 +1,85 @@
+/**
+ * SWITCHECKBOX CSS
+ *
+ * HTML Example
+
+	<div class="swicheckbox">
+	  <input type="checkbox">
+	  <span class="slider round"></span>
+	</div>
+ *
+ * @author Anthony Moral <contact@coercive.fr>
+ */
+.swicheckbox {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+
+	input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	.slider {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: lightgrey;
+		transition: .3s;
+
+		&:before {
+			@extend %Fontello;
+			@extend .icon-cancel;
+			margin: 0;
+			padding: 5px 3px;
+			font-size: 1.6rem;
+			color: dimgrey;
+
+			position: absolute;
+			height: 26px;
+			width: 26px;
+			left: 4px;
+			bottom: 4px;
+			background-color: white;
+			transition: .3s;
+		}
+
+		&.disabled {
+			cursor: auto;
+		}
+
+		&.round {
+			border-radius: 34px;
+			&:before {
+				border-radius: 50%;
+			}
+		}
+	}
+
+	input:checked + .slider {
+		background-color: $swicheckbox-color-checked;
+		&:before {
+			@extend .icon-ok;
+			color: $swicheckbox-color-checked;
+			transform: translateX(26px);
+		}
+	}
+
+	input:focus + .slider {
+		&:before {
+			box-shadow: 0 0 2px 2px rgba(0,0,0,.4);
+		}
+	}
+
+	input:disabled + .slider {
+		background-color: black !important;
+		&:before {
+			color: black !important;
+		}
+	}
+}
