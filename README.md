@@ -63,6 +63,16 @@ CookieConsent is a micropackage (css, js, php) to easily manage user consent at 
 }
 ```
 
+**Settings**
+
+- settings.lang : the website current language *(for customize CSS with)*
+- settings.name : the name of config cookie
+- settings.accept : the value for "accept all"
+- settings.decline : the value for "decline all"
+- settings..._duration : different durations for setted cookie for each choice 
+
+etc...
+
 # JS requires
 The example JS file require some externals scripts :
 
