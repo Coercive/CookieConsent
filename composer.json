@@ -4,10 +4,6 @@
     "description": "Coercive CookieConsent is a micropackage (css, js, php) to easily manage user consent at the cookie level of a site.",
     "homepage": "http://coercive.fr",
     "license": "MIT",
-    "licenses": [{
-      "type": "MIT",
-      "url": "https://github.com/Coercive/CookieConsent/blob/main/LICENSE"
-    }],
     "authors": [
         {
             "name": "Anthony Moral",
