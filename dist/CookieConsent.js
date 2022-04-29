@@ -66,25 +66,25 @@
     CookieConsent.prototype.start = function ()
     {
         var $overlay = this.overlay();
-        var $card = $overlay.find('.card[data-service="cookies"]');
+        var $card = $overlay.find('.ccard[data-service="cookies"]');
         if($card.length) {
-            $overlay.find('.card').hide();
+            $overlay.find('.ccard').hide();
             $card.fadeIn();
             return;
         }
 
         //# Prépare les données de la popup
         $card = $(
-            '<div class="card" data-service="cookies">' +
-                '<div class="card-header">' +
-                    '<div class="card-title">' + this.data.popup.title + '</div>' +
+            '<div class="ccard" data-service="cookies">' +
+                '<div class="ccard-header">' +
+                    '<div class="ccard-title">' + this.data.popup.title + '</div>' +
                 '</div>' +
-                '<div class="card-body">' +
-                    '<div class="card-content">' +
+                '<div class="ccard-body">' +
+                    '<div class="ccard-content">' +
                         '<p>' + this.data.popup.description + '</p>' +
                     '</div>' +
                 '</div>' +
-                '<div class="card-footer">' +
+                '<div class="ccard-footer">' +
                     '<button class="btn btn-cookieconsent-decline">' + this.data.popup.btn_decline + '</button>' +
                     '<button class="btn btn-cookieconsent-configure">' + this.data.popup.btn_configure + '</button>' +
                     '<button class="btn btn-cookieconsent-accept">' + this.data.popup.btn_accept + '</button>' +
@@ -111,7 +111,7 @@
 
         //# Affichage
         $overlay.append($card);
-        $overlay.find('.card').hide();
+        $overlay.find('.ccard').hide();
         $card.fadeIn();
     };
 
@@ -123,9 +123,9 @@
     CookieConsent.prototype.configure = function ()
     {
         var $overlay = this.overlay();
-        var $card = $overlay.find('.card[data-service="cookies-configure"]');
+        var $card = $overlay.find('.ccard[data-service="cookies-configure"]');
         if($card.length) {
-            $overlay.find('.card').hide();
+            $overlay.find('.ccard').hide();
             $card.fadeIn();
             return;
         }
@@ -151,19 +151,19 @@
 
         //# Prépare les données de l'overlay
         $card = $(
-            '<div class="card" data-service="cookies-configure">' +
-                '<div class="card-header">' +
-                    '<div class="card-title">' + this.data.configure.title + '</div>' +
+            '<div class="ccard" data-service="cookies-configure">' +
+                '<div class="ccard-header">' +
+                    '<div class="ccard-title">' + this.data.configure.title + '</div>' +
                 '</div>' +
-                '<div class="card-body">' +
-                    '<div class="card-content">' +
+                '<div class="ccard-body">' +
+                    '<div class="ccard-content">' +
                         '<p>' + this.data.configure.description + '</p>' +
                         '<div class="options-tab">' +
                             '<form>' + form + '</form>' +
                         '</div>' +
                     '</div>' +
                 '</div>' +
-                '<div class="card-footer">' +
+                '<div class="ccard-footer">' +
                     '<button class="btn btn-cookieconsent-back">' + this.data.configure.btn_back + '</button>' +
                     '<button class="btn btn-cookieconsent-save">' + this.data.configure.btn_save + '</button>' +
                 '</div>' +
@@ -184,7 +184,7 @@
 
         //# Smart affichage
         $overlay.append($card);
-        $overlay.find('.card').hide();
+        $overlay.find('.ccard').hide();
         $card.fadeIn();
     };
 

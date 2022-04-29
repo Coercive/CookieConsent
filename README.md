@@ -129,8 +129,8 @@ Customize CSS for current language on main container.
 
 Customize CSS for each popup. *(main, or configure)*.
 ```css
-.card[data-service="cookies"] {}
-.card[data-service="cookies-configure"] {}
+.ccard[data-service="cookies"] {}
+.ccard[data-service="cookies-configure"] {}
 ```
 
 Add background layout when popup is opened.
