@@ -1,0 +1,265 @@
+//# Background Overlay
+body {
+	&.CookieConsentPopupOpened {
+		overflow: hidden;
+		&:before {
+			content: '';
+			position: fixed;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: rgba(255, 255, 255, .75);
+			z-index: 100;
+		}
+	}
+}
+
+//# Plugin Popup
+#CookieConsentPopup {
+	position: fixed;
+	display: block;
+	box-sizing: border-box;
+	overflow: hidden;
+	pointer-events:none;
+
+	z-index: 999999;
+	bottom: -200px;
+	left: -200px;
+	height: auto;
+	width: 100%;
+	max-width: 350px;
+
+	margin: 25px;
+	padding: 0;
+
+	//# Very small medium
+	@media screen and (max-width: 450px) {
+		margin: 15px;
+		max-width: calc(100% - 45px);
+	}
+
+	border-radius: 15px;
+	background-color: white;
+	box-shadow: 0 0 40px rgba(0,0,0,.5);
+
+	//# Animation
+	opacity: 0;
+	transition: all ease 1.5s;
+	&.show {
+		transition: all ease 1.5s;
+		opacity: 1;
+		pointer-events: all;
+		bottom: 0;
+		left: 0;
+	}
+
+	.card {
+		position: relative;
+		display: block;
+		padding: 15px;
+
+		&[data-service="cookies"] {
+			.card-body {
+				.card-content {
+					max-height: 150px;
+				}
+			}
+		}
+
+		&[data-service="cookies-configure"] {
+			.card-body {
+				.card-content {
+					max-height: 450px;
+
+					//# Very small medium
+					@media screen and (max-height: 800px) {
+						max-height: calc(70vh - 180px);
+					}
+				}
+			}
+		}
+
+		&:before {
+			position: absolute;
+			display: block;
+			content: '';
+
+			top: -50px;
+			right: -20px;
+			width: 115px;
+			height: 100px;
+
+			background-image: url(/dist/img/cookie.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+		.card-header {
+			margin-bottom: 10px;
+			padding-bottom: 5px;
+			border-bottom: 1px solid black;
+			max-width: 275px;
+			.card-title {
+				@extend %cookieconsent-font-title;
+				font-size: 20px;
+				letter-spacing: 1px;
+				color: black;
+			}
+		}
+		.card-body {
+			position: relative;
+			margin-bottom: 20px;
+			.card-content {
+				@extend %cookieconsent-font-text;
+				font-size: 16px;
+				line-height: 16px;
+				color: dimgrey;
+
+				overflow-x: hidden;
+				overflow-y: auto;
+				padding-bottom: 15px;
+
+				.options-tab {
+					padding-top: 10px;
+					form {
+						label {
+							display: flex;
+							flex-direction: row;
+							padding-top: 5px;
+							border-top: 1px solid lightgrey;
+							&:hover {
+								cursor: pointer;
+							}
+							&.disabled {
+								background-color: #f4f4f4;
+								&:hover {
+									cursor: auto;
+								}
+							}
+							.options-label {
+								display: flex;
+								flex-direction: column;
+								width: 100%;
+								.options-title {
+									@extend %cookieconsent-font-title;
+									font-weight: normal;
+									font-size: 16px;
+									color: black;
+								}
+								.options-description {
+									@extend %cookieconsent-font-text;
+									font-weight: normal;
+									font-size: 14px;
+									line-height: 14px;
+									color: dimgrey;
+								}
+							}
+							.options-input {
+								display: flex;
+								flex-direction: column;
+								align-content: flex-start;
+								align-items: end;
+								width: 70px;
+								.swicheckbox {
+									transform: scale(.7);
+									transform-origin: right center;
+								}
+							}
+						}
+					}
+				}
+			}
+			&:after {
+				position: absolute;
+				display: block;
+				content: ' ';
+				width: 100%;
+				height: 25px;
+				bottom: 0;
+				left: 0;
+
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+70,1+100 */
+				background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+			}
+		}
+		.card-footer {
+			position: absolute;
+			display: flex;
+			flex-direction: row;
+			box-sizing: border-box;
+
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+
+			@extend %cookieconsent-font-btn;
+			text-align: center;
+			text-transform: uppercase;
+			background-color: white;
+			border-top: 1px solid lightgrey;
+			font-size: 1.3rem;
+			button {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				align-content: center;
+
+				text-align: center;
+				text-decoration: none;
+
+				width: 100%;
+				padding: 6px 0;
+
+				transition: all ease .3s;
+
+				&.btn-cookieconsent-decline {
+					background-color: dimgrey;
+					color: white;
+					&:hover {
+						cursor: pointer;
+						background-color: grey;
+					}
+				}
+				&.btn-cookieconsent-back {
+					max-width: 120px;
+					background-color: dimgrey;
+					color: white;
+					&:hover {
+						cursor: pointer;
+						background-color: grey;
+					}
+				}
+				&.btn-cookieconsent-configure {
+					background-color: white;
+					color: dimgrey;
+					&:hover {
+						cursor: pointer;
+						background-color: lightgrey;
+					}
+				}
+				&.btn-cookieconsent-save {
+					background-color: white;
+					color: dimgrey;
+					&:hover {
+						cursor: pointer;
+						color: white;
+						background-color: black;
+					}
+				}
+				&.btn-cookieconsent-accept {
+					background-color: $cookieconsent-color-btn-accept;
+					color: white;
+					&:hover {
+						cursor: pointer;
+						background-color: darken($cookieconsent-color-btn-accept, 5%);
+					}
+				}
+			}
+		}
+	}
+}
