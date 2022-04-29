@@ -23,9 +23,5 @@
         "psr-4": { "Coercive\\Utility\\CookieConsent\\": "dist/" }
     },
     "minimum-stability" : "dev",
-    "extra": {
-        "branch-alias": {
-            "dev-main": "1.0-dev"
-        }
-    }
+    "prefer-stable" : true
 }
