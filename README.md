@@ -41,6 +41,7 @@ CookieConsent is a micropackage (css, js, php) to easily manage user consent at 
             {
                 "id": "GOOGLE_ANALYTICS",
                 "disabled": false,
+                "checked": true,
                 "title": "Google Analytics",
                 "description": "Example of description text."
             },
@@ -48,6 +49,7 @@ CookieConsent is a micropackage (css, js, php) to easily manage user consent at 
             {
                 "id": "FACEBOOK",
                 "disabled": false,
+                "checked": false,
                 "title": "Facebook",
                 "description": "Example of description text."
             },
@@ -55,6 +57,7 @@ CookieConsent is a micropackage (css, js, php) to easily manage user consent at 
             {
                 "id": "YOUTUBE",
                 "disabled": false,
+                "checked": false,
                 "title": "YouTube",
                 "description": "Example of description text."
             }

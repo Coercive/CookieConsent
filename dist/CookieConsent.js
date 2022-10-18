@@ -131,9 +131,10 @@
         }
 
         //# Préparation du formulaire
-        var form = ''; var disabled = false;
+        var form = ''; var disabled, checked = false;
         for (var key in this.data.configure.options) {
             disabled = this.data.configure.options[key].disabled || false;
+            checked = this.data.configure.options[key].checked || false;
             form +=
                 '<label' + (disabled ? ' class="disabled"' : '') + '>' +
                     '<div class="options-label">' +
@@ -142,7 +143,7 @@
                     '</div>' +
                     '<div class="options-input">' +
                         '<div class="swicheckbox">' +
-                            '<input ' + (disabled ? 'disabled checked ' : '') + 'type="checkbox" value="'+ this.data.configure.options[key].id +'">' +
+                            '<input ' + (disabled ? 'disabled checked ' : '') + (!disabled && checked ? 'checked ' : '') + 'type="checkbox" value="'+ this.data.configure.options[key].id +'">' +
                             '<span class="slider' + (disabled ? ' disabled' : '') + '"></span>' +
                         '</div>' +
                     '</div>' +
