@@ -246,6 +246,11 @@
             vals += (vals ? ';' : '') + this.value;
         });
 
+        if(!vals) {
+            this.decline();
+            return;
+        }
+
         this.cookie.set(this.data.settings.name, vals, { expires: this.data.settings.configure_duration });
         this.close();
     };
