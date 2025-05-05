@@ -44,7 +44,7 @@
     {
         var $overlay = $('#'+ this.options.popup);
         if(!$overlay.length) {
-            $overlay = $('<div id="' + this.options.popup + '" data-lang="' + this.data.settings.lang + '" tabindex="-1" role="dialog"></div>');
+            $overlay = $('<div id="' + this.options.popup + '" data-lang="' + this.data.settings.lang + '" tabindex="-1" role="dialog" aria-label="' + this.data.popup.title.replace('"', '“') + '"></div>');
             $('body').append($overlay);
         }
 
