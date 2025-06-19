@@ -81,7 +81,7 @@
                 '</div>' +
                 '<div class="ccard-body">' +
                     '<div data-nosnippet class="ccard-content">' +
-                        '<p data-nosnippet>' + this.data.popup.description + '</p>' +
+                        this.data.popup.description +
                     '</div>' +
                 '</div>' +
                 '<div class="ccard-footer">' +
