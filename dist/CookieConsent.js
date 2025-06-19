@@ -44,7 +44,7 @@
     {
         var $overlay = $('#'+ this.options.popup);
         if(!$overlay.length) {
-            $overlay = $('<div id="' + this.options.popup + '" data-lang="' + this.data.settings.lang + '" tabindex="-1" role="dialog" aria-label="' + this.data.popup.title.replace('"', '“') + '"></div>');
+            $overlay = $('<div data-nosnippet id="' + this.options.popup + '" data-lang="' + this.data.settings.lang + '" tabindex="-1" role="dialog" aria-label="' + this.data.popup.title.replace('"', '“') + '"></div>');
             $('body').append($overlay);
         }
 
@@ -77,17 +77,17 @@
         $card = $(
             '<div class="ccard" data-service="cookies">' +
                 '<div class="ccard-header">' +
-                    '<div class="ccard-title">' + this.data.popup.title + '</div>' +
+                    '<div data-nosnippet class="ccard-title">' + this.data.popup.title + '</div>' +
                 '</div>' +
                 '<div class="ccard-body">' +
-                    '<div class="ccard-content">' +
-                        '<p>' + this.data.popup.description + '</p>' +
+                    '<div data-nosnippet class="ccard-content">' +
+                        '<p data-nosnippet>' + this.data.popup.description + '</p>' +
                     '</div>' +
                 '</div>' +
                 '<div class="ccard-footer">' +
-                    '<button class="btn btn-cookieconsent-decline">' + this.data.popup.btn_decline + '</button>' +
-                    '<button class="btn btn-cookieconsent-configure">' + this.data.popup.btn_configure + '</button>' +
-                    '<button class="btn btn-cookieconsent-accept">' + this.data.popup.btn_accept + '</button>' +
+                    '<button data-nosnippet class="btn btn-cookieconsent-decline">' + this.data.popup.btn_decline + '</button>' +
+                    '<button data-nosnippet class="btn btn-cookieconsent-configure">' + this.data.popup.btn_configure + '</button>' +
+                    '<button data-nosnippet class="btn btn-cookieconsent-accept">' + this.data.popup.btn_accept + '</button>' +
                 '</div>' +
             '</div>'
         );
@@ -138,8 +138,8 @@
             form +=
                 '<label' + (disabled ? ' class="disabled"' : '') + '>' +
                     '<div class="options-label">' +
-                        '<div class="options-title">' + this.data.configure.options[key].title + '</div>' +
-                        '<div class="options-description">' + this.data.configure.options[key].description + '</div>' +
+                        '<div data-nosnippet class="options-title">' + this.data.configure.options[key].title + '</div>' +
+                        '<div data-nosnippet class="options-description">' + this.data.configure.options[key].description + '</div>' +
                     '</div>' +
                     '<div class="options-input">' +
                         '<div class="swicheckbox">' +
@@ -154,19 +154,19 @@
         $card = $(
             '<div class="ccard" data-service="cookies-configure">' +
                 '<div class="ccard-header">' +
-                    '<div class="ccard-title">' + this.data.configure.title + '</div>' +
+                    '<div data-nosnippet class="ccard-title">' + this.data.configure.title + '</div>' +
                 '</div>' +
                 '<div class="ccard-body">' +
-                    '<div class="ccard-content">' +
-                        '<p>' + this.data.configure.description + '</p>' +
+                    '<div data-nosnippet class="ccard-content">' +
+                        '<p data-nosnippet>' + this.data.configure.description + '</p>' +
                         '<div class="options-tab">' +
                             '<form>' + form + '</form>' +
                         '</div>' +
                     '</div>' +
                 '</div>' +
                 '<div class="ccard-footer">' +
-                    '<button class="btn btn-cookieconsent-back">' + this.data.configure.btn_back + '</button>' +
-                    '<button class="btn btn-cookieconsent-save">' + this.data.configure.btn_save + '</button>' +
+                    '<button data-nosnippet class="btn btn-cookieconsent-back">' + this.data.configure.btn_back + '</button>' +
+                    '<button data-nosnippet class="btn btn-cookieconsent-save">' + this.data.configure.btn_save + '</button>' +
                 '</div>' +
             '</div>'
         );
